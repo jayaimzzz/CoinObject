@@ -18,8 +18,12 @@ const coin = {
         const image = document.createElement('img');
         // 3. One point: Set the properties of this image element to show either face-up
         //    or face-down, depending on whether this.state is 0 or 1.
-        image.setAttribute('src', 'images/heads-01.png')
-        image.className = 'coin'
+        if (this.toString() == 'Heads') {
+            image.setAttribute('src', 'images/heads-01.png');
+        } else {
+            image.setAttribute('src', 'images/tails-01.png');
+        }
+        image.className = 'coin';
         return image;
     }
 };
@@ -39,7 +43,12 @@ const displayImageOnPage = function (image){
     destination.appendChild(image);
 }
 
-displayTextOnPage("Flip a coin 20 times and diplay the results as a string of text.", "h3")
+displayTextOnPage("Flip a coin 20 times and display the results as a string of text.", "h3")
 for (let i = 0; i < 20; i++){
     displayTextOnPage(i + 1 +  ": " + coin.toString())
+}
+
+displayTextOnPage("Flip a coin 20 times and display the resutls as pictures.", "h3")
+for (let i = 0; i < 20; i++){
+    displayImageOnPage(coin.toHTML());
 }
