@@ -42,7 +42,7 @@ const displayTextOnPage = function (string, elementType){
 const displayImageOnPage = function (image){
     destination.appendChild(image);
 }
-
+displayTextOnPage("Coin Object Assessment.", "h2")
 displayTextOnPage("Flip a coin 20 times and display the results as a string of text.", "h3")
 for (let i = 0; i < 20; i++){
     displayTextOnPage(i + 1 +  ": " + coin.toString())
